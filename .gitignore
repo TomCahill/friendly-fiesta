@@ -1,4 +1,4 @@
-/build/ 
+build/ 
 .DS_Store 
 *~
 *.swp 
@@ -9,3 +9,5 @@ npm-debug.log
 /tmp/
 .vscode 
 *.log
+vendor/
+logs/*
