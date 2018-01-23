@@ -1,36 +1,33 @@
 {
-    "name": "slim/slim-skeleton",
-    "description": "A Slim Framework skeleton application for rapid development",
-    "keywords": ["microframework", "rest", "router", "psr7"],
-    "homepage": "http://github.com/slimphp/Slim-Skeleton",
-    "license": "MIT",
+    "name": "SunBros/Invoice",
+    "description": "",
+    "keywords": [],
+    "homepage": "http://ldickinson.co.uk/",
+    "license": "MTI",
     "authors": [
         {
-            "name": "Josh Lockhart",
-            "email": "info@joshlockhart.com",
-            "homepage": "http://www.joshlockhart.com/"
+            "name": "Liam Dickinson",
+            "email": "",
+            "homepage": "http://ldickinson.co.uk/"
         }
     ],
     "require": {
         "php": ">=5.5.0",
         "slim/slim": "^3.1",
         "slim/php-view": "^2.0",
-        "monolog/monolog": "^1.17"
+        "monolog/monolog": "^1.17",
+        "illuminate/database": "^5.5",
+        "slim/twig-view": "^2.3",
+        "respect/validation": "^1.1",
+        "mpdf/mpdf": "^7.0",
+        "slim/flash": "^0.4.0"
     },
-    "require-dev": {
-        "phpunit/phpunit": ">=4.8 < 6.0"
-    },
-    "autoload-dev": {
+    "autoload": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "invoice\\": "src"
         }
     },
     "config": {
         "process-timeout" : 0
-    },
-    "scripts": {
-        "start": "php -S localhost:8080 -t public public/index.php",
-        "test": "phpunit"
     }
-
 }

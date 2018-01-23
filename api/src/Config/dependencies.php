@@ -17,3 +17,17 @@ $container['logger'] = function ($c) {
     $logger->pushHandler(new Monolog\Handler\StreamHandler($settings['path'], $settings['level']));
     return $logger;
 };
+
+// database
+$capsule = new \Illuminate\Database\Capsule\Manager;
+$capsule->addConnection($container->get('settings')['db']);
+$capsule->setAsGlobal();
+$capsule->bootEloquent();
+
+$container['db'] = function($c) use ($capsule){
+    return $capsule;
+};
+
+$container['PageController'] = function($c){
+    return new \invoice\controllers\PageController;
+};
