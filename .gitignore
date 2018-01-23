@@ -11,3 +11,4 @@ npm-debug.log
 *.log
 vendor/
 logs/*
+.environment.php
