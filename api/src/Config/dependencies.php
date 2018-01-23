@@ -29,5 +29,5 @@ $container['db'] = function($c) use ($capsule){
 };
 
 $container['PageController'] = function($c){
-    return new \invoice\controllers\PageController;
+    return new \Invoice\Controllers\PageController;
 };

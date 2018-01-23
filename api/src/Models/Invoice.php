@@ -1,10 +1,15 @@
 <?php
 
-namespace invoice\models;
-use illuminate\database\Eloquent\Model;
+namespace Invoice\Models;
 
-class Invoice extends Model{
+use Illuminate\Database\Eloquent\Model;
+
+class Invoice extends Model {
+
   protected $table = 'invoice';
+
   protected $fillable = [];
+
   public $timestamps = 'false';
+  
 }

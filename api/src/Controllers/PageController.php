@@ -1,13 +1,14 @@
 <?php 
 
-namespace invoice\controllers;
-use invoice\models\Invoice;
+namespace Invoice\Controllers;
 
-class PageController{
-  public function index($req, $res){
+use Invoice\Models\Invoice;
+
+class PageController {
+  public function index($req, $res) {
     $invoices = invoice::all();
 
-    foreach($invoices as $invoice){
+    foreach($invoices as $invoice) {
       var_dump($invoice->name);
     }
   }
