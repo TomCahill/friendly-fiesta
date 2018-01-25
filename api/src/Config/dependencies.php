@@ -3,10 +3,13 @@
 
 $container = $app->getContainer();
 
-// view renderer
-$container['renderer'] = function ($c) {
-    $settings = $c->get('settings')['renderer'];
-    return new Slim\Views\PhpRenderer($settings['template_path']);
+// view
+$container['view'] = function($c){
+    $settings = $c->get('settings')['view'];
+    $view = new Slim\Views\Twig($settings['template_path'], $settings);
+    $view->addExtension(new \Slim\Views\Slim\Views\TwigExtension($c->rooter, $c->request->getUri()));
+    // ----- Set view globals here -----
+    return $view;
 };
 
 // monolog
@@ -29,5 +32,5 @@ $container['db'] = function($c) use ($capsule){
 };
 
 $container['PageController'] = function($c){
-    return new \Invoice\Controllers\PageController;
+    return new \invoice\controllers\PageController;
 };

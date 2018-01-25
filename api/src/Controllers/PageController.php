@@ -2,7 +2,7 @@
 
 namespace Invoice\Controllers;
 
-use Invoice\Models\Invoice;
+use \Invoice\Models\Invoice;
 
 class PageController {
   public function index($req, $res) {

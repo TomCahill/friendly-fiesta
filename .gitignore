@@ -7,8 +7,9 @@ node_modules/
 *.iml
 npm-debug.log 
 /tmp/
-.vscode 
+.vscode
 *.log
 vendor/
 logs/*
 .environment.php
+*.lock

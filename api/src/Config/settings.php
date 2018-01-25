@@ -18,9 +18,11 @@ return [
             'prefix'=>'invoice_'
         ],
 
-        // Renderer settings
-        'renderer' => [
+        // View settings
+        'view' => [
             'template_path' => __DIR__ . '/../Views/',
+            'cache' => false,
+            'debug' => true
         ],
 
         // Monolog settings
