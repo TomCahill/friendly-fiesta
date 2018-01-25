@@ -5,4 +5,4 @@ use Slim\Http\Response;
 
 // Routes
 
-$app->get('/tits', 'PageController:index');
+$app->get('/', 'PageController:index');
