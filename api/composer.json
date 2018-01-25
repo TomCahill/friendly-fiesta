@@ -7,8 +7,11 @@
     "authors": [
         {
             "name": "Liam Dickinson",
-            "email": "",
             "homepage": "http://ldickinson.co.uk/"
+        },
+        {
+            "name": "Tom Cahill",
+            "homepage": "http://tomcahill.co.uk/"
         }
     ],
     "require": {
@@ -29,5 +32,8 @@
     },
     "config": {
         "process-timeout" : 0
+    },
+    "scripts": {
+        "start": "php -S localhost:8000 -t public public/index.php"
     }
 }
