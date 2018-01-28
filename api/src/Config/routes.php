@@ -12,3 +12,12 @@ $app->group('/invoice', function(){
   $this->get('/{id:[0-9]+}', 'InvoiceController:get');
   $this->post('/{id:[0-9]+}', 'InvoiceController:update');
 });
+
+
+$app->group('/customer', function(){
+  $this->get('', 'CustomerController:getAll');
+  $this->post('', 'CustomerController:create');
+
+  $this->get('/{id:[0-9]+}', 'CustomerController:get');
+  $this->post('/{id:[0-9]+}', 'CustomerController:update');
+});

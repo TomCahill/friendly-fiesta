@@ -27,3 +27,9 @@ $container['InvoiceController'] = function($c){
         $c
     );
 };
+
+$container['CustomerController'] = function($c){
+    return new Invoice\Controllers\CustomerController(
+        $c
+    );
+};
