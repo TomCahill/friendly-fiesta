@@ -9,10 +9,12 @@ class PageController {
   protected $view;
 
   public function __construct($c) {
-    $this->view = $c->view;
+
   }
 
   public function index($req, $res) {
-    return $this->view->render($res, 'index.twig');
+    $data = ['data' => 'test'];
+
+    return $res->WithJson($data, 404);
   }
 }

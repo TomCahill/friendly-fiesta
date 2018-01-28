@@ -3,15 +3,6 @@
 
 $container = $app->getContainer();
 
-// view
-$container['view'] = function($c){
-    $settings = $c->get('settings')['view'];
-    $view = new Slim\Views\Twig($settings['template_path'], $settings);
-    $view->addExtension(new \Slim\Views\TwigExtension($c->router, $c->request->getUri()));
-    // ----- Set view globals here -----
-    return $view;
-};
-
 // monolog
 $container['logger'] = function ($c) {
     $settings = $c->get('settings')['logger'];
