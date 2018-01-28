@@ -7,7 +7,7 @@ $container = $app->getContainer();
 $container['view'] = function($c){
     $settings = $c->get('settings')['view'];
     $view = new Slim\Views\Twig($settings['template_path'], $settings);
-    $view->addExtension(new \Slim\Views\Slim\Views\TwigExtension($c->rooter, $c->request->getUri()));
+    $view->addExtension(new \Slim\Views\TwigExtension($c->router, $c->request->getUri()));
     // ----- Set view globals here -----
     return $view;
 };
@@ -32,5 +32,7 @@ $container['db'] = function($c) use ($capsule){
 };
 
 $container['PageController'] = function($c){
-    return new \invoice\controllers\PageController;
+    return new Invoice\Controllers\PageController(
+        $c
+    );
 };

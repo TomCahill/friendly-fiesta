@@ -5,11 +5,14 @@ namespace Invoice\Controllers;
 use \Invoice\Models\Invoice;
 
 class PageController {
-  public function index($req, $res) {
-    $invoices = invoice::all();
 
-    foreach($invoices as $invoice) {
-      var_dump($invoice->name);
-    }
+  protected $view;
+
+  public function __construct($c) {
+    $this->view = $c->view;
+  }
+
+  public function index($req, $res) {
+    return $this->view->render($res, 'index.twig');
   }
 }
